@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  plugins: [],
   entry: './src/client/index.js',
   output: {
     filename: 'app.js',
@@ -15,8 +16,8 @@ module.exports = {
     ]
   },
   devServer: {
-    index: './src/index.html',
+    index: '../src/index.html',
     open: true,
-    publicPath: path.resolve(__dirname, '../dist')
+    publicPath: "/"
   }
 };
