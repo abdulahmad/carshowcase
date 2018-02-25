@@ -13,5 +13,10 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
+  },
+  devServer: {
+    index: './src/index.html',
+    open: true,
+    publicPath: path.resolve(__dirname, '../dist')
   }
 };
