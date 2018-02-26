@@ -3,6 +3,9 @@ const path = require('path');
 module.exports = {
   plugins: [],
   entry: './src/client/index.js',
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   output: {
     filename: 'app.js',
     path: path.resolve(__dirname, '../dist'),
@@ -10,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js(x)?$/,
         loader: 'babel-loader',
       },
     ],
