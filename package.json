@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config ./config/webpack.config.js --mode development",
     "build": "webpack --config ./config/webpack.config.js --mode production",
-    "build:dev": "webpack --config ./config/webpack.config.js --mode development"
+    "build:dev": "webpack --config ./config/webpack.config.js --mode development",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,12 @@
     "react-dom": "^16.0.0",
     "webpack": "^4.0.0",
     "webpack-cli": "^2.0.8",
-    "webpack-dev-server": "^3.0.0-beta.2"
+    "webpack-dev-server": "^3.0.0-beta.2",
+    "@storybook/react": "^3.3.14",
+    "@storybook/addon-actions": "^3.3.14",
+    "@storybook/addon-links": "^3.3.14",
+    "@storybook/addons": "^3.3.14"
   },
-  "devDependencies": {}
+  "devDependencies": {
+  }
 }
