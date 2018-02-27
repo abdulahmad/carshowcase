@@ -12,14 +12,18 @@ class Homepage extends React.Component {
     super(props);
 
     this.state = { order: '' };
-  }
-  componentWillMount() {
-    this.setState({ cars: APIService.getCars(this.state.order).response });
+
     this.sort = this.sort.bind(this);
   }
+  componentWillMount() {
+    if (typeof this.state.cars === 'undefined') {
+      this.setState({ cars: APIService.getCars(this.state.order).response });
+    }
+  }
 
-  sort(order) {
-    this.setState({ order });
+  sort(event) {
+    this.setState({ order: event.target.value });
+    this.setState({ cars: APIService.getCars(event.target.value).response });
   }
 
   render() {
@@ -37,5 +41,4 @@ class Homepage extends React.Component {
 export default Homepage;
 
 Homepage.propTypes = {
-  // authorBio: PropTypes.object.isRequired,
 };

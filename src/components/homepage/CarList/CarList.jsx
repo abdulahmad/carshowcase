@@ -4,16 +4,17 @@ import './CarList.scss';
 // import APIService from '../../../services/APIService';
 import CarTile from '../CarTile/CarTile';
 
-class CarList extends React.Component {
-  render() {
-    const carTiles = this.props.cars.map(car => <CarTile {...car} />);
-    return (
-      <div className="CarList">
-        {carTiles}
-      </div>
-    );
-  }
+// const carTiles = this.props.cars.map(car => <CarTile {...car} />);
+
+function getCars(cars) {
+  return cars.map(car => <CarTile {...car} />);
 }
+
+const CarList = props => (
+  <div className="CarList">
+    {getCars(props.cars)}
+  </div>
+);
 
 export default CarList;
 

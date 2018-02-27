@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Dropdown.scss';
 
-const Dropdown = ({ sort }) => (
-  <select>
+const Dropdown = props => (
+  <select onChange={props.sort}>
     <option selected disabled>Sort By</option>
-    <option value="name" onClick={sort('name')}>Name</option>
-    <option value="availability" onClick={sort('availability')}>Availability</option>
+    <option value="name">Name</option>
+    <option value="availability">Availability</option>
   </select>
 );
 
