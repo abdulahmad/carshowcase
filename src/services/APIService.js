@@ -2,6 +2,8 @@ import AvailabilityResponseInStock from './mock/availabilityResponseInStock.json
 import AvailabilityResponseOutOfStock from './mock/availabilityResponseOutOfStock.json';
 import AvailabilityResponseUnavailable from './mock/availabilityResponseUnavailable.json';
 import CarsResponse from './mock/carsResponse.json';
+import CarsResponseAvailability from './mock/carsResponseAvailability.json';
+import CarsResponseName from './mock/carsResponseName.json';
 
 /**
  * This really is a mock API Service. If there was a real API integration, I'd
@@ -18,7 +20,12 @@ class APIService {
     return AvailabilityResponseInStock;
   }
 
-  static getCars() {
+  static getCars(order) {
+    if (order === 'availability') {
+      return CarsResponseAvailability;
+    } else if (order === 'name') {
+      return CarsResponseName;
+    }
     return CarsResponse;
   }
 }
