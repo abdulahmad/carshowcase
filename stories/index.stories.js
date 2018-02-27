@@ -20,6 +20,6 @@ storiesOf('Homepage', module)
   .add('Header', () => <Header />)
   .add('Footer', () => <Footer />)
   .add('Button', () => <Button />)
-  .add('CarList', () => <CarList {...CarsResponse.response} />)
+  .add('CarList', () => <CarList cars={CarsResponse.response} />)
   .add('CarTile', () => <CarTile {...CarsResponse.response[0]} availability="In Dealership" />)
   .add('Dropdown', () => <Dropdown sort={() => {}} />);

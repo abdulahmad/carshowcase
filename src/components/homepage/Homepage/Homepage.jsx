@@ -17,7 +17,17 @@ class Homepage extends React.Component {
   }
   componentWillMount() {
     if (typeof this.state.cars === 'undefined') {
-      this.setState({ cars: APIService.getCars(this.state.order).response });
+      // These API calls would normally be wrapped in promises
+      // for a proper implementation against an API
+      console.log('componentWillMont');
+      const cars = APIService.getCars(this.state.order).response;
+      console.log('pre for');
+      for (let i = 0; i < cars.length; i += 1) {
+        console.log('for', i);
+        cars[i].availability = APIService.getAvailability(cars[i].id).available;
+      }
+      console.log('post for', cars);
+      this.setState({ cars });
     }
   }
 

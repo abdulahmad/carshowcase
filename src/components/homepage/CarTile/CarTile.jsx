@@ -15,8 +15,8 @@ const CarTile = ({
 }) => (
   <div className="CarTile">
     <img className="CarTile__img" src={image} alt={name} />
-    <span className="CarTitle__name">{ name }</span>
-    <span className="CarTitle__availability">{availability}</span>
+    <div className="CarTile__name">{ name }</div>
+    <div className="CarTile__availability">{availability}</div>
     {getBuyButton(availability)}
   </div>
 );

@@ -1,5 +1,26 @@
+.CarTile {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size:1rem;
+  margin: 20px 0;
+}
+
 .CarTile__img {
   object-fit: cover;
-  height: 200px;
-  width: 100px;
+  width: 100%;
+  height: 100px;
+}
+
+.CarTile__name {
+  clear:both;
+  padding: 10px 0;
+  // width:100%;
+}
+
+.CarTile__availability {
+  clear:both;
+  padding: 10px 0;
+}
+
+.Button {
+
 }
