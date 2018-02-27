@@ -8,9 +8,14 @@ import CarList from '../CarList/CarList';
 import Footer from '../Footer/Footer';
 
 class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { order: '' };
+  }
   componentWillMount() {
-    this.setState({ cars: APIService.getCars().response });
-    this.sort.bind(this);
+    this.setState({ cars: APIService.getCars(this.state.order).response });
+    this.sort = this.sort.bind(this);
   }
 
   sort(order) {
