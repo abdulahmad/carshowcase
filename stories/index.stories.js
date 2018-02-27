@@ -12,9 +12,8 @@ import CarsResponse from '../src/services/mock/carsResponse.json';
 
 // storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
 
-const car = CarsResponse.response[0];
 storiesOf('Homepage', module)
   .add('Homepage', () => <Homepage />)
   .add('Button', () => <Button />)
   .add('CarTile', () => <CarTile {...CarsResponse.response[0]} availability="In Dealership" />)
-  .add('Dropdown', () => <Dropdown />);
+  .add('Dropdown', () => <Dropdown sort={() => {}} />);
