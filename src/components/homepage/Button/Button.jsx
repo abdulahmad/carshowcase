@@ -3,7 +3,7 @@ import React from 'react';
 import './Button.scss';
 
 const Button = () => (
-  <div className="Button" />
+  <button className="Button">Buy</button>
 );
 
 export default Button;

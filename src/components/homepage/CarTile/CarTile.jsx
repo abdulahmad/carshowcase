@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '../Button/Button.jsx';
+import Button from '../Button/Button';
 import './CarTile.scss';
 
 function getBuyButton(availability) {
