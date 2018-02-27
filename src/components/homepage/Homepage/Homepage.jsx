@@ -8,6 +8,11 @@ import CarList from '../CarList/CarList';
 import Footer from '../Footer/Footer';
 
 class Homepage extends React.Component {
+  componentWillMount() {
+    this.setState({ cars: APIService.getCars().response });
+    this.sort.bind(this);
+  }
+
   sort(order) {
     this.setState({ order });
   }
@@ -16,7 +21,7 @@ class Homepage extends React.Component {
     return (
       <div className="Homepage">
         <Header />
-        <Dropdown />
+        <Dropdown sort={this.sort} />
         <CarList order={this.state.order} cars={this.state.cars} />
         <Footer />
       </div>

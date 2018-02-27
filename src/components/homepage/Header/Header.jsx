@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import './Header.scss';
 
 const Header = () => (
-  Header
+  <div className="Header">Car Showcase</div>
 );
 
 export default Header;
 
 Header.propTypes = {
-  // authorBio: PropTypes.object.isRequired,
-  sort: PropTypes.func.isRequired,
 };

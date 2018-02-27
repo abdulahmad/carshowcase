@@ -7,7 +7,3 @@ const Button = () => (
 );
 
 export default Button;
-
-Button.propTypes = {
-  // authorBio: PropTypes.object.isRequired,
-};

@@ -13,6 +13,5 @@ const Dropdown = ({ sort }) => (
 export default Dropdown;
 
 Dropdown.propTypes = {
-  // authorBio: PropTypes.object.isRequired,
   sort: PropTypes.func.isRequired,
 };

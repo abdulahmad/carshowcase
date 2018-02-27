@@ -11,7 +11,7 @@ function getBuyButton(availability) {
 }
 
 const CarTile = ({
-  image, name, make, model, year, availability,
+  image, name, availability,
 }) => (
   <div className="CarTile">
     <img className="CarTile__img" src={image} alt={name} />
@@ -24,11 +24,7 @@ const CarTile = ({
 export default CarTile;
 
 CarTile.propTypes = {
-  // authorBio: PropTypes.object.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  make: PropTypes.string.isRequired,
-  model: PropTypes.string.isRequired,
-  year: PropTypes.number.isRequired,
   availability: PropTypes.string.isRequired,
 };
