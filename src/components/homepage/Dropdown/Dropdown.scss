@@ -1,5 +1,13 @@
 .Dropdown {
   position: absolute;
   right: 0;
-  margin: 20px;
+  margin: 25px 2.25% 0 0;
+
+  @media (min-width: 600px) {
+    margin-right: 1.25%;
+  }
+
+  @media (min-width: 1024px) {
+    margin-right: 0.75%;
+  }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Homepage from './components/homepage/Homepage/Homepage';
 // import HtmlHead from './components/HtmlHead/HtmlHead';
 // import Page from './components/Page/Page';
 
@@ -6,13 +7,7 @@ class App extends Component { // eslint-disable-line react/prefer-stateless-func
   render() {
     return (
       <div className="App">
-        { /* <HtmlHead
-          title={data.Title}
-          metaDescription={data.Excerpt}
-          metaImage={data.MainImageUrl}
-          metaUrl=""
-        />
-        <Page data={data} /> */ }
+        <Homepage />
       </div>
     );
   }

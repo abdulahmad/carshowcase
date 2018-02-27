@@ -4,7 +4,7 @@ This project is an Car Showcase website created in React.
 
 ## Development Notes
 
-I chose to build it as I would if this were a real piece of code I was building for a production system. I intentionally broke down the Article Reader into as small components as I could.
+I chose to build it as I would if this were a real piece of code I was building for a production system. I intentionally broke down the Car Showcase into as small components as I could.
 
 I did not use any existing package to bootstrap this project-- at this point I have enough experience with webpack that I am comfortable building out the project scaffolding on my own as I need it.
 
@@ -12,9 +12,11 @@ I added ESLint just to help keep the code looking clean as I built it. I also ad
 
 I didn't include a CSS framework because in the modern era of flexbox and CSS Grid it's not really necessary. There are some compromises that have to be made due to CSS Grid still being fairly new and a few browsers that are still in use don't fully support it, but in that case the goal would be to serve up the mobile version of the website. Also, this site was very simple and didn't require any changing of the way the page displayed between mobile and desktop.
 
-If I were to spend more time on this I'd abstract importing the Article data into an API Mock service, rather than importing the JSON directly. And add CSS BEM Linting to enforce CSS being styled per component with consistent naming conventions. I'd also create some sort of global SCSS structure for common variables (breakpoints, etc) and theming.
+If I were to spend more time on this I'd clean up the API Service-- Have a proper factory which would deliver the live API Service or the mock one based on environment. Do some more finessing around the styling and breakpoints. Add CSS BEM Linting to enforce CSS being styled per component with consistent naming conventions. I'd create some sort of global SCSS structure for common variables (breakpoints, etc) and theming. The Webpack configuration could also be extended to have proper development and production configs (such as building CSS into their own folder, uglify the production build, etc). And I'd build some Unit Tests and do clean up to ensure the bundle is as small as possible. Finally, I'd also add HTML Helmet support to deliver metadata on the page.
 
-I took the balance of Saturday to build this project out. If I had more time (and I don't-- busy on Sunday) I would make sure the test cases were working and do clean up and ensure the bundle is as small as possible.
+Another issue that I recognize is the dropdown could be customized to be a little bit more mobile friendly. It's too small.
+
+Webpack 4 difficulties took up a big chunk of time at the initial stages of this task-- but I wanted to see how mature the Webpack 4 ecosystem was before I abandoned it. I was able to work around the issues. I couldn't get the auto generated HTML going due to Webpack 4 issues. There's also some weirdness around storybook running the production version of React-- I'm sure I could fix this if I focused on it but I had some time constraints.
 
 Commenting in the code is light-- partially because of time constraints, but also because many of the components are pretty light and simple to look at and understand how they work.
 
@@ -57,56 +59,30 @@ You also need to run ```npm i``` on the repository for linting to work correctly
 
 ## Building Code
 
-Run ```npm run build``` to build the JS and CSS bundles into the build folder.
+Run ```npm run build``` to build the JS bundles into the dist folder.
 
 ## Testing
 
 Run ```npm test``` to run test cases and show test coverage.
 
-NOTE: Test Cases have not been worked on and the default one fails because there are some UI specific packages that have to be conditionally disabled if running in test mode. I can do this, but it would take more than I have this weekend :)
+NOTE: Test Cases have not been worked on and is broken. I can do this, but it would take more than I have this weekend :)
 
 ## Code Structure
 
 ### Important Files & folders:
 
-```build``` - where the production build gets outputted
+```dist``` - where the webpack build gets output
 
-```config``` - webpack, jest and env config
+```config``` - webpack config
 
-```src``` - code for article reader lives here
+```src``` - code for car showcase lives here
 
-```src\components``` - code for every component within article reader
+```src\client``` - client side entry point for car showcase
 
-```src\data``` - mock data from API calls
+```src\components``` - code for every component within car showcase
+
+```src\services``` - API Service and mock data
 
 ```src\App.jsx``` - top level component
 
 ```stories``` - where storybook stories are defined
-
-### Component Descriptions:
-
-```Author``` - Displays author name
-
-```CaptionedImage``` - Displays a captioned image
-
-```Content``` - Takes in a content slot from the page and then renders the appropriate content component
-
-```ContntAd``` - Content slot for Ad Placeholder
-
-```ContentImage``` - Content slot for Image
-
-```ContentTextBlock``` - Content slot for Text Block
-
-```ContntVideoEmbed``` - Content slot for Video Embed
-
-```HtmlHead``` - Sets the headers for the page. This is where the meta tags for social media sharing are set
-
-```NextArticle``` - Displays information for the Next Article
-
-```Page``` - Main Layout and Global state for the article reader
-
-```Pagination``` - Displays and can change current page
-
-```ProgressBar``` - Progress Bar (unused in article but can be seen in storybook)
-
-```Title``` - H1 Title for article

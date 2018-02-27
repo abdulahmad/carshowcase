@@ -33,7 +33,7 @@ class Homepage extends React.Component {
 
   sort(event) {
     this.setState({ order: event.target.value });
-    this.setState({ cars: this.getCarsFromAPIService(this.state.order) });
+    this.setState({ cars: this.getCarsFromAPIService(event.target.value) });
   }
 
   render() {
