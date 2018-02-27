@@ -1,13 +1,16 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import './CarList.scss';
-import APIService from '../../../services/APIService';
+// import APIService from '../../../services/APIService';
 import CarTile from '../CarTile/CarTile';
 
 class CarList extends React.Component {
   render() {
+    const carTiles = this.props.cars.map(car => <CarTile {...car} />);
     return (
-      <div className="CarList" />
+      <div className="CarList">
+        {carTiles}
+      </div>
     );
   }
 }
@@ -15,4 +18,5 @@ class CarList extends React.Component {
 export default CarList;
 
 CarList.propTypes = {
+  cars: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
